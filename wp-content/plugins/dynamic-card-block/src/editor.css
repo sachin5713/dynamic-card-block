@@ -1,4 +1,41 @@
-.dcb-card {
-  padding: 1rem;
-  border: 1px dashed #bbb;
+.dynamic-card-block {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+}
+
+/* Image wrapper ensures editor preview doesn't overflow */
+.dcb-image-wrap {
+  width: 100%;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.dcb-image-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 100%;
+  border-radius: 6px;
+}
+
+.image-upload-btn {
+  width: 100%;
+  padding: 0;
+  display: block;
+  text-align: center;
+}
+
+/* Title / desc spacing in editor preview */
+.dcb-title {
+  margin: 0 0 8px 0;
+}
+
+.dcb-desc {
+  margin: 0 0 12px 0;
+}
+
+/* Button preview wrapper */
+.dcb-button-wrap {
+  margin-top: 10px;
 }

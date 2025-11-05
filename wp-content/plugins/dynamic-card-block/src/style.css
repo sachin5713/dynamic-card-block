@@ -1,20 +1,33 @@
 .dynamic-card-block {
-    max-width: 350px;
-    text-align: center;
+  box-sizing: border-box;
+  max-width: 540px;
+  margin: 0 auto 1rem;
 }
 
-.dynamic-card-block img {
-    width: 100%;
-    height: auto;
-    display: block;
+.dcb-image-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
 }
 
-.dynamic-card-block .dcb-button {
-    display: inline-block;
-    margin-top: 12px;
-    padding: 8px 16px;
-    background: #000;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 6px;
+.dcb-title {
+  margin: 0 0 8px 0;
+}
+
+.dcb-desc {
+  margin: 0 0 12px 0;
+}
+
+/* Button default + hover uses custom property --dcb-button-hover set inline in save() */
+.dcb-button {
+  display: inline-block;
+  text-decoration: none;
+  transition: background-color .18s ease, transform .12s ease;
+}
+
+.dcb-button:hover,
+.dcb-button:focus {
+  background-color: var(--dcb-button-hover);
+  transform: translateY(-1px);
 }

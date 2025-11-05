@@ -1,70 +1,41 @@
 {
-  "apiVersion": 3,
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
   "name": "dcb/card",
   "title": "Dynamic Card",
   "category": "widgets",
-  "icon": "id-alt",
-  "description": "A dynamic card block with image, text, and button.",
-  "attributes": {
-    "title": {
-      "type": "string",
-      "source": "html",
-      "selector": "h3"
-    },
-    "description": {
-      "type": "string",
-      "source": "html",
-      "selector": "p"
-    },
-    "imageUrl": {
-      "type": "string"
-    },
-    "buttonUrl": {
-      "type": "string",
-      "default": ""
-    },
-    "buttonText": {
-      "type": "string",
-      "default": "Learn More"
-    },
-    "padding": {
-      "type": "string",
-      "default": "20px"
-    },
-    "borderColor": {
-      "type": "string",
-      "default": "#000"
-    },
-    "borderRadius": {
-      "type": "string",
-      "default": "10px"
-    },
-    "borderWidth": {
-      "type": "string",
-      "default": "2px"
-    },
-    "backgroundColor": {
-      "type": "string",
-      "default": "#ffffff"
-    },
-    "titleColor": {
-      "type": "string",
-      "default": "#000000"
-    },
-    "descriptionColor": {
-      "type": "string",
-      "default": "#444444"
-    },
-    "buttonBgColor": {
-      "type": "string",
-      "default": "#000000"
-    },
-    "buttonTextColor": {
-      "type": "string",
-      "default": "#ffffff"
-    }
+  "icon": "id",
+  "description": "A customizable card with title, image, description and button (JS-only).",
+  "supports": {
+    "html": false
   },
-  "editorScript": "file:index.js",
-  "editorStyle": "file:editor.css",
-  "style": "file:style.css"
+  "attributes": {
+    "title": { "type": "string", "source": "html", "selector": "h3" },
+    "description": { "type": "string", "source": "html", "selector": "p" },
+    "imageUrl": { "type": "string", "default": "" },
+    "imageMaxWidth": { "type": "string", "default": "100%" },
+    "buttonUrl": { "type": "string", "default": "" },
+    "buttonText": { "type": "string", "default": "Learn More" },
+    "backgroundColor": { "type": "string", "default": "#ffffff" },
+    "titleColor": { "type": "string", "default": "#111111" },
+    "descriptionColor": { "type": "string", "default": "#444444" },
+    "buttonBgColor": { "type": "string", "default": "#111111" },
+    "buttonTextColor": { "type": "string", "default": "#ffffff" },
+    "buttonHoverBgColor": { "type": "string", "default": "#222222" },
+    "padding": { "type": "string", "default": "20px" },
+    "borderWidth": { "type": "string", "default": "1px" },
+    "borderRadius": { "type": "string", "default": "8px" },
+    "borderColor": { "type": "string", "default": "#e6e6e6" },
+    "titleFontSize": { "type": "string", "default": "20px" },
+    "titleFontWeight": { "type": "string", "default": "600" },
+    "titleLineHeight": { "type": "string", "default": "1.2" },
+    "descriptionFontSize": { "type": "string", "default": "14px" },
+    "descriptionFontWeight": { "type": "string", "default": "400" },
+    "descriptionLineHeight": { "type": "string", "default": "1.6" },
+    "buttonPadding": { "type": "string", "default": "10px 18px" },
+    "buttonRadius": { "type": "string", "default": "6px" }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./editor.css",
+  "style": "file:./style.css"
 }
