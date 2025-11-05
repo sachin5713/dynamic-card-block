@@ -1,15 +1,20 @@
-.dcb-card {
-  border: 1px solid #ddd;
-  padding: 1rem;
-  border-radius: 6px;
-  max-width: 350px;
+.dynamic-card-block {
+    max-width: 350px;
+    text-align: center;
 }
-.dcb-card__image {
-  max-width: 100%;
-  display: block;
-  margin-bottom: 0.5rem;
+
+.dynamic-card-block img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
-.dcb-card__title {
-  font-size: 1.25rem;
-  margin-bottom: 0.25rem;
+
+.dynamic-card-block .dcb-button {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px 16px;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
 }

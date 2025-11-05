@@ -1,14 +1,10 @@
 {
-  "$schema": "https://schemas.wp.org/trunk/block.json",
-  "apiVersion": 2,
+  "apiVersion": 3,
   "name": "dcb/card",
-  "title": "Card (Static)",
+  "title": "Dynamic Card",
   "category": "widgets",
-  "icon": "index-card",
-  "description": "Simple JS-only card block.",
-  "supports": {
-    "html": false
-  },
+  "icon": "id-alt",
+  "description": "A dynamic card block with image, text, and button.",
   "attributes": {
     "title": {
       "type": "string",
@@ -25,10 +21,50 @@
     },
     "buttonUrl": {
       "type": "string",
-      "default": "#"
+      "default": ""
+    },
+    "buttonText": {
+      "type": "string",
+      "default": "Learn More"
+    },
+    "padding": {
+      "type": "string",
+      "default": "20px"
+    },
+    "borderColor": {
+      "type": "string",
+      "default": "#000"
+    },
+    "borderRadius": {
+      "type": "string",
+      "default": "10px"
+    },
+    "borderWidth": {
+      "type": "string",
+      "default": "2px"
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "titleColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "descriptionColor": {
+      "type": "string",
+      "default": "#444444"
+    },
+    "buttonBgColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "buttonTextColor": {
+      "type": "string",
+      "default": "#ffffff"
     }
   },
-  "editorScript": "file:./index.js",
-  "style": "file:./style.css",
-  "editorStyle": "file:./editor.css"
+  "editorScript": "file:index.js",
+  "editorStyle": "file:editor.css",
+  "style": "file:style.css"
 }

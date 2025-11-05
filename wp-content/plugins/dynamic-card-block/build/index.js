@@ -8,7 +8,7 @@
   \************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"dcb/card","title":"Card (Static)","category":"widgets","icon":"index-card","description":"Simple JS-only card block.","supports":{"html":false},"attributes":{"title":{"type":"string","source":"html","selector":"h3"},"description":{"type":"string","source":"html","selector":"p"},"imageUrl":{"type":"string"},"buttonUrl":{"type":"string","default":"#"}},"editorScript":"file:./index.js","style":"file:./style.css","editorStyle":"file:./editor.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"dcb/card","title":"Dynamic Card","category":"widgets","icon":"id-alt","description":"A dynamic card block with image, text, and button.","attributes":{"title":{"type":"string","source":"html","selector":"h3"},"description":{"type":"string","source":"html","selector":"p"},"imageUrl":{"type":"string"},"buttonUrl":{"type":"string","default":""},"buttonText":{"type":"string","default":"Learn More"},"padding":{"type":"string","default":"20px"},"borderColor":{"type":"string","default":"#000"},"borderRadius":{"type":"string","default":"10px"},"borderWidth":{"type":"string","default":"2px"},"backgroundColor":{"type":"string","default":"#ffffff"},"titleColor":{"type":"string","default":"#000000"},"descriptionColor":{"type":"string","default":"#444444"},"buttonBgColor":{"type":"string","default":"#000000"},"buttonTextColor":{"type":"string","default":"#ffffff"}},"editorScript":"file:index.js","editorStyle":"file:editor.css","style":"file:style.css"}');
 
 /***/ }),
 
@@ -155,8 +155,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
 (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_3__.name, {
   edit: ({
     attributes,
@@ -166,33 +164,126 @@ __webpack_require__.r(__webpack_exports__);
       title,
       description,
       imageUrl,
-      buttonUrl
+      buttonUrl,
+      buttonText,
+      padding,
+      borderColor,
+      borderRadius,
+      borderWidth,
+      backgroundColor,
+      titleColor,
+      descriptionColor,
+      buttonBgColor,
+      buttonTextColor
     } = attributes;
-    const onSelectImage = media => {
-      setAttributes({
-        imageUrl: media.url
-      });
-    };
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
           title: "Card Settings",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
             label: "Button URL",
             value: buttonUrl,
             placeholder: "https://example.com",
             onChange: value => setAttributes({
               buttonUrl: value
             })
-          })
-        })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+            label: "Button Text",
+            value: buttonText,
+            onChange: value => setAttributes({
+              buttonText: value
+            })
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+          title: "Design Settings",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+            label: "Padding (px)",
+            value: padding,
+            onChange: value => setAttributes({
+              padding: value
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+            label: "Border Width (px)",
+            value: borderWidth,
+            onChange: value => setAttributes({
+              borderWidth: value
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+            label: "Border Radius (px)",
+            value: borderRadius,
+            onChange: value => setAttributes({
+              borderRadius: value
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+            label: "Border Color",
+            value: borderColor,
+            onChange: value => setAttributes({
+              borderColor: value
+            })
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+          title: "Color Settings",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("strong", {
+              children: "Background Color"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ColorPicker, {
+            color: backgroundColor,
+            onChangeComplete: value => setAttributes({
+              backgroundColor: value.hex
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("strong", {
+              children: "Title Text Color"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ColorPicker, {
+            color: titleColor,
+            onChangeComplete: value => setAttributes({
+              titleColor: value.hex
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("strong", {
+              children: "Description Text Color"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ColorPicker, {
+            color: descriptionColor,
+            onChangeComplete: value => setAttributes({
+              descriptionColor: value.hex
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("strong", {
+              children: "Button Background Color"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ColorPicker, {
+            color: buttonBgColor,
+            onChangeComplete: value => setAttributes({
+              buttonBgColor: value.hex
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("strong", {
+              children: "Button Text Color"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ColorPicker, {
+            color: buttonTextColor,
+            onChangeComplete: value => setAttributes({
+              buttonTextColor: value.hex
+            })
+          })]
+        })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
         className: "dynamic-card-block",
+        style: {
+          padding,
+          borderWidth,
+          borderRadius,
+          borderColor,
+          backgroundColor
+        },
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaUpload, {
+          allowedTypes: ['image'],
           onSelect: media => setAttributes({
             imageUrl: media.url
           }),
-          allowedTypes: ['image'],
           render: ({
             open
           }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
@@ -200,42 +291,70 @@ __webpack_require__.r(__webpack_exports__);
             className: "button button-large",
             children: imageUrl ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
               src: imageUrl,
-              alt: title
+              alt: ""
             }) : 'Upload Image'
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
           tagName: "h3",
+          style: {
+            color: titleColor
+          },
           value: title,
+          placeholder: "Card Title",
           onChange: value => setAttributes({
             title: value
-          }),
-          placeholder: "Card Title"
+          })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
           tagName: "p",
           value: description,
+          style: {
+            color: descriptionColor
+          },
+          placeholder: "Card Description",
           onChange: value => setAttributes({
             description: value
-          }),
-          placeholder: "Card Description"
+          })
+        }), buttonUrl && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+          className: "dcb-button",
+          href: buttonUrl,
+          style: {
+            backgroundColor: buttonBgColor,
+            color: buttonTextColor
+          },
+          children: buttonText
         })]
       })]
     });
   },
-  save: props => {
-    const {
-      attributes
-    } = props;
+  save: ({
+    attributes
+  }) => {
     const {
       title,
       description,
       imageUrl,
-      buttonUrl
+      buttonUrl,
+      buttonText,
+      padding,
+      borderColor,
+      borderRadius,
+      borderWidth,
+      backgroundColor,
+      buttonBgColor,
+      buttonTextColor
     } = attributes;
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
       className: "dynamic-card-block",
+      style: {
+        padding,
+        borderWidth,
+        borderRadius,
+        borderColor,
+        backgroundColor
+      },
       children: [imageUrl && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
         src: imageUrl,
-        alt: title
+        alt: ""
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h3", {
         children: title
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
@@ -243,9 +362,11 @@ __webpack_require__.r(__webpack_exports__);
       }), buttonUrl && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
         className: "dcb-button",
         href: buttonUrl,
-        target: "_blank",
-        rel: "noopener noreferrer",
-        children: "Learn More"
+        style: {
+          backgroundColor: buttonBgColor,
+          color: buttonTextColor
+        },
+        children: buttonText
       })]
     });
   }
