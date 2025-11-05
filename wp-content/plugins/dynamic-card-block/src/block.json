@@ -22,6 +22,10 @@
     },
     "imageUrl": {
       "type": "string"
+    },
+    "buttonUrl": {
+      "type": "string",
+      "default": "#"
     }
   },
   "editorScript": "file:./index.js",

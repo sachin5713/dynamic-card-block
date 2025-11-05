@@ -1,0 +1,15 @@
+.dcb-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 6px;
+  max-width: 350px;
+}
+.dcb-card__image {
+  max-width: 100%;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.dcb-card__title {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}

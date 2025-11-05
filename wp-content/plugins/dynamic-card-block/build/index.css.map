@@ -1,0 +1,1 @@
+{"version":3,"file":"index.css","mappings":";;;AAAA;EACE,aAAa;EACb,uBAAuB;AACzB","sources":["webpack://dynamic-card-block/./src/editor.css"],"sourcesContent":[".dcb-card {\r\n  padding: 1rem;\r\n  border: 1px dashed #bbb;\r\n}\r\n"],"names":[],"sourceRoot":""}
